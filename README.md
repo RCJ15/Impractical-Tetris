@@ -27,4 +27,10 @@ You're now done.
 
 ## Game Plan
 These things below are what I plan on creating for this game.
-- Physics based 
+- Physics based Tetris gameplay.
+- Any shape you can imagine in Tetris (with a system to allow for even more stupid shapes)
+- Like 1 original track for this garbage game.
+- A main menu.
+- A pause menu.
+- High score stuff.
+- Youtube video???
