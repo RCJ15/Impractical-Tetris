@@ -8,11 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Shape
   - Water
   - UI
-  - 
-  - 
+  - Background
+  - Post Processing
   - 
   - 
   - 
