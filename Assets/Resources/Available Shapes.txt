@@ -1,0 +1,8 @@
+// NOTE: This file is auto updated every time the unity editor is recompiled.
+// DO NOT CHANGE THIS MANUALLY
+
+Basic Shapes\Bean
+Basic Shapes\Circle
+Basic Shapes\Hexagon
+Basic Shapes\Square
+Basic Shapes\Triangle

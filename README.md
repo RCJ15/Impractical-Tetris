@@ -1,4 +1,4 @@
-# Impractical-Tetris
+# Impractical Tetris
 Tetris with any possible shape, not just squares.
 
 [Sub to my YouTube](https://www.youtube.com/channel/UCXDxyxrKwSWp1rbv-WUjsEQ) since I'm gonna be doing a devlog video.
