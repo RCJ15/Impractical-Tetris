@@ -6,3 +6,10 @@ Basic Shapes\Circle
 Basic Shapes\Hexagon
 Basic Shapes\Square
 Basic Shapes\Triangle
+Tetrominos\I Tetromino
+Tetrominos\J Tetromino
+Tetrominos\L Tetromino
+Tetrominos\O Tetromino
+Tetrominos\S Tetromino
+Tetrominos\T Tetromino
+Tetrominos\Z Tetromino

@@ -138,8 +138,8 @@ namespace Tetris.Shapes
 #if UNITY_EDITOR
         #region Updating "Available Shapes" file automatically
         //-- Prefabs Folder Path Constants
-        private static readonly string PrefabsPath = Path.Combine(Application.dataPath, "Resources", PREFAB_FOLDER);
-        private static readonly Stopwatch watch = new Stopwatch();
+        private static readonly string _prefabsPath = Path.Combine(Application.dataPath, "Resources", PREFAB_FOLDER);
+        private static readonly Stopwatch _watch = new Stopwatch();
         private const string FILE_TOP_TEXT =
             @"// NOTE: This file is auto updated every time the unity editor is recompiled.
 // DO NOT CHANGE THIS MANUALLY
@@ -150,10 +150,10 @@ namespace Tetris.Shapes
         private static void UpdateFile()
         {
             StringBuilder builder = new StringBuilder(FILE_TOP_TEXT);
-            LoadDirectory(PrefabsPath, ref builder);
+            LoadDirectory(_prefabsPath, ref builder);
 
             // Search through all the directories in the original directory
-            foreach (string directory in Directory.GetDirectories(PrefabsPath))
+            foreach (string directory in Directory.GetDirectories(_prefabsPath))
             {
                 LoadDirectory(directory, ref builder);
             }
@@ -164,13 +164,13 @@ namespace Tetris.Shapes
         [MenuItem("Developer/Update Available Shapes")]
         private static void ManualUpdateFile()
         {
-            watch.Start();
+            _watch.Start();
 
             UpdateFile();
 
-            watch.Stop();
+            _watch.Stop();
 
-            long time = watch.ElapsedMilliseconds;
+            long time = _watch.ElapsedMilliseconds;
             Debug.Log("Updated all available shapes. It took: " + time + (time == 1 ? "millisecond." : " milliseconds."), Asset);
         }
 
@@ -194,7 +194,7 @@ namespace Tetris.Shapes
                     continue;
                 }
 
-                string fileName = filePath.Substring(PrefabsPath.Length + 1);
+                string fileName = filePath.Substring(_prefabsPath.Length + 1);
 
                 int lastDotIndex = fileName.LastIndexOf('.');
 
