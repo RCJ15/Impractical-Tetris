@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5505786488701751597}
   - component: {fileID: 1442835581655279852}
   - component: {fileID: 2765697355496225039}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: I Tetromino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,8 +115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   col: {fileID: 3581003634825331987}
-  gridSize: {x: 1, y: 4}
   gridTiling: {x: 1, y: 1}
+  gridSize: {x: 1, y: 4}
   grid: 01010101
   size: {x: 1, y: 1}
   angle: 0
@@ -187,7 +187,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f0e982f9f11326c468cdad9034d8ea1e, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 1

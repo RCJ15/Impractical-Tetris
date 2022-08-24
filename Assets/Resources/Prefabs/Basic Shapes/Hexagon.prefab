@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 1702602645904192037}
   - component: {fileID: 1323993777472813500}
   - component: {fileID: 2364606400577955329}
-  m_Layer: 0
+  - component: {fileID: 2148685207932709296}
+  m_Layer: 3
   m_Name: Hexagon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,3 +206,24 @@ MonoBehaviour:
   - {x: 0.37818164, y: -0.65459096, z: 0.65459096}
   - {x: 0.37818164, y: -0.65459096, z: 0.65459096}
   _col: {fileID: 1323993777472813500}
+--- !u!50 &2148685207932709296
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3251352483991842010}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: f0e982f9f11326c468cdad9034d8ea1e, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
+  m_Constraints: 0

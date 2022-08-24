@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 2258550224215513368}
   - component: {fileID: 4666192011438239927}
   - component: {fileID: 3153650198346063330}
-  m_Layer: 0
+  - component: {fileID: -4149007068981171628}
+  m_Layer: 3
   m_Name: Bean
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,3 +457,24 @@ MonoBehaviour:
   - {x: 0.6993603, y: -0.13847935, z: 0.7012265}
   - {x: 0.6993603, y: -0.13847935, z: 0.7012265}
   _col: {fileID: 4666192011438239927}
+--- !u!50 &-4149007068981171628
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7154003871284618290}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: f0e982f9f11326c468cdad9034d8ea1e, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
+  m_Constraints: 0

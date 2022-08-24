@@ -32,8 +32,6 @@ namespace Tetris.Shapes
         [SerializeField] private Collider2D _col;
         private static readonly Stopwatch _watch = new Stopwatch();
 
-        private bool _transformPoints;
-
         private void Start()
         {
             GenerateShape(false);
@@ -48,8 +46,6 @@ namespace Tetris.Shapes
             {
                 _watch.Start();
             }
-
-            _transformPoints = true;
 
             // Get components if they are null
             if (_col == null)
@@ -67,17 +63,20 @@ namespace Tetris.Shapes
                     }
 
                     _col = col;
-
-                    if (col.GetType() == typeof(TetrisCollider))
-                    {
-                        _transformPoints = false;
-                    }
                 }
             }
 
             if (meshFilter == null)
             {
                 meshFilter = GetComponent<MeshFilter>();
+            }
+
+            // Set tetris col offset
+            Vector3 tetrisColOffset = Vector3.zero;
+
+            if (_col.GetType() == typeof(CustomCollider2D) && TryGetComponent<TetrisCollider>(out _))
+            {
+                tetrisColOffset = transform.position;
             }
 
             // Get the mesh
@@ -198,9 +197,9 @@ namespace Tetris.Shapes
 
             for (int i = 0; i < triangleCount; i++)
             {
-                vertices.Add(Convert(triangles[i].Points._0));
-                vertices.Add(Convert(triangles[i].Points._2));
-                vertices.Add(Convert(triangles[i].Points._1));
+                vertices.Add(Convert(triangles[i].Points._0) + tetrisColOffset);
+                vertices.Add(Convert(triangles[i].Points._2) + tetrisColOffset);
+                vertices.Add(Convert(triangles[i].Points._1) + tetrisColOffset);
 
                 normals.Add(regDir);
                 normals.Add(regDir);
@@ -231,8 +230,8 @@ namespace Tetris.Shapes
 
                 void AddVertex()
                 {
-                    vertices.Add(transform.InverseTransformPoint(vertex));
-                    vertices.Add(transform.InverseTransformPoint(nextVertex));
+                    vertices.Add(transform.InverseTransformPoint(vertex) + tetrisColOffset);
+                    vertices.Add(transform.InverseTransformPoint(nextVertex) + tetrisColOffset);
 
                     normals.Add(dir);
                     normals.Add(dir);
@@ -498,7 +497,43 @@ namespace Tetris.Shapes
                 {
                     _target.GenerateShape();
                 }
+
+                if (PolygonScalerEnabled)
+                {
+                    EditorGUILayout.Space();
+                    PolygonScalerScale = EditorGUILayout.Slider(PolygonScalerScale, 0, 5);
+
+                    if (GUILayout.Button("Apply Scale"))
+                    {
+                        PolygonCollider2D col = _target.GetComponent<PolygonCollider2D>();
+
+                        if (col == null)
+                        {
+                            Debug.LogError("No PolygonCollider2D is attached!");
+                            return;
+                        }
+
+                        Vector2[] newPoints = col.points;
+
+                        for (int i = 0; i < newPoints.Length; i++)
+                        {
+                            newPoints[i] *= PolygonScalerScale;
+                        }
+
+                        col.points = newPoints;
+
+                        _target.GenerateShape(false);
+                    }
+                }
             }
+        }
+
+        private static float PolygonScalerScale = 1;
+        private static bool PolygonScalerEnabled = false;
+        [ContextMenu("Toggle Polygon Scaler")]
+        private void TogglePolygonScaler()
+        {
+            PolygonScalerEnabled = !PolygonScalerEnabled;
         }
 #else
         private void Start()
