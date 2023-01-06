@@ -1,8 +1,6 @@
 # Impractical Tetris
 Tetris with any possible shape, not just squares.
 
-[Sub to my YouTube](https://www.youtube.com/channel/UCXDxyxrKwSWp1rbv-WUjsEQ) since I'm gonna be doing a devlog video.
-
 ## How To Open The Project
 Hey did you know that this game is on Github? Wow that means you can download the source code and start doing whatever you want with the game. Very cool right?
 Here is how to do that:
